@@ -2,36 +2,104 @@
 <html>
 <head>
     <title>Pet Profiles</title>
-    <!-- Add necessary CSS or stylesheet links -->
-    <!-- For example, you might link to a CSS file -->
-  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .illustration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+        .card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .adopt-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #17a2b8;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .adopt-btn:hover {
+            background-color: #138496;
+        }
+    </style>
 </head>
 <body>
-    <h1>Pet Profiles</h1>
+
+    <!-- SVG Illustrations -->
+    <svg class="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#f8f9fa" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,90.7C672,96,768,160,864,176C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1048,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
     
-    {% if pets %}
-        <div class="pet-profiles">
+    <!-- Pet Profiles Content -->
+    <div class="container">
+        <h1 class="text-center mb-4">Pet Profiles</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for pet in pets %}
-                <div class="pet-profile">
-                    <h2>{{ pet.name }}</h2>
-                    <p><strong>Age:</strong> {{ pet.age }}</p>
-                    <p><strong>Breed:</strong> {{ pet.breed }}</p>
-                    <p><strong>Description:</strong> {{ pet.description }}</p>
-                    <img src="{{ pet.photo.url }}" alt="{{ pet.name }} Photo" width="200">
-                    <!-- Add other pet details here -->
-                    {% if pet.adoption_status %}
-                        <p>This pet is available for adoption!</p>
-                        <!-- Add adoption application form or link here -->
-                    {% else %}
-                        <p>This pet is already adopted.</p>
-                    {% endif %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="{{ pet.photo.url }}" class="card-img-top" alt="{{ pet.name }} Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pet.name }}</h5>
+                        <p class="card-text"><strong>Age:</strong> {{ pet.age }}</p>
+                        <p class="card-text"><strong>Breed:</strong> {{ pet.breed }}</p>
+                        <p class="card-text">{{ pet.description }}</p>
+                        {% if pet.adoption_status %}
+                            <p class="card-text text-success">Available for adoption</p>
+                            <a href="#" class="adopt-btn">Adopt Now</a>
+                        {% else %}
+                            <p class="card-text text-danger">Already adopted</p>
+                        {% endif %}
+                    </div>
                 </div>
+            </div>
             {% endfor %}
         </div>
-    {% else %}
-        <p>No pets available.</p>
-    {% endif %}
-    
-    <!-- Add other content or functionalities as needed -->
+    </div>
+
+    <!-- Bootstrap JavaScript (if needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

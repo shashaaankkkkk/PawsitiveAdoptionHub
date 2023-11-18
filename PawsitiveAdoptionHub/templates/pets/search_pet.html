@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for adjusting card styles */
+        .pet-card {
+            margin-bottom: 20px;
+        }
+        .pet-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>Pet Search</h1>
+    <form method="GET" class="mt-4">
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="id_species">Species:</label>
+                <select name="species" id="id_species" class="form-control">
+                    <option value="">Any</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <!-- Add more species choices as needed -->
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="id_age">Age:</label>
+                <select name="age" id="id_age" class="form-control">
+                    <option value="">Any</option>
+                    <option value="1">1 year</option>
+                    <option value="2">2 years</option>
+                    <!-- Add more age choices as needed -->
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="id_size">Size:</label>
+                <select name="size" id="id_size" class="form-control">
+                    <option value="">Any</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <!-- Add more size choices as needed -->
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="id_temperament">Temperament:</label>
+                <select name="temperament" id="id_temperament" class="form-control">
+                    <option value="">Any</option>
+                    <option value="friendly">Friendly</option>
+                    <option value="calm">Calm</option>
+                    <option value="playful">Playful</option>
+                    <!-- Add more temperament choices as needed -->
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Search</button>
+    </form>
+
+    <div class="row mt-4">
+        {% for pet in pets %}
+            <div class="col-md-4">
+                <div class="card pet-card">
+                    <img src="{{ pet.photo.url }}" class="card-img-top" alt="{{ pet.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pet.name }}</h5>
+                        <p class="card-text">Species: {{ pet.species }}</p>
+                        <p class="card-text">Age: {{ pet.age }}</p>
+                        <!-- Add more pet details as needed -->
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if pets %}
+        <!-- Display search results in cards -->
+        <!-- The Bootstrap grid system (row, col) is used to create a responsive layout -->
+    {% else %}
+        <p class="mt-4">No pets found matching the criteria.</p>
+    {% endif %}
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

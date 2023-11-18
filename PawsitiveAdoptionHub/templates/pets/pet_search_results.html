@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Search Results</title>
+</head>
+<body>
+    <h1>Pet Search Results</h1>
+    {% if pets %}
+        <ul>
+            {% for pet in pets %}
+                <li>{{ pet.name }} - {{ pet.species }} - Age: {{ pet.age }}</li>
+                <!-- Display other pet details as needed -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No pets found matching the criteria.</p>
+    {% endif %}
+</body>
+</html>
