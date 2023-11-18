@@ -1,0 +1,125 @@
+<!-- forum/templates/forum/post_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forum</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        .post-container {
+            margin-top: 50px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .post-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .post-meta {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .post-content {
+            margin-top: 10px;
+        }
+
+        .sidebar {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .sidebar-heading {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Pawsitive</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Add more menu items -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Sidebar for posts -->
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <h5 class="sidebar-heading">Recent Posts</h5>
+                    <ul class="list-group">
+                        <!-- Example sidebar content (replace with actual posts) -->
+                        <li class="list-group-item">Post 1</li>
+                        <li class="list-group-item">Post 2</li>
+                        <li class="list-group-item">Post 3</li>
+                        <!-- Add dynamic sidebar content if needed -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-md-9">
+                <h1 class="mb-4">Post List</h1>
+
+                <!-- Displaying posts -->
+                {% for post in posts %}
+                <div class="post">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    <p class="post-meta">Author: {{ post.author.username }}</p>
+                    <p class="post-meta">Date: {{ post.created_at }}</p>
+                    <p class="post-content">{{ post.content }}</p>
+                    <!-- Add like and comment sections -->
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-outline-primary">Like</button>
+                            <!-- Add like functionality -->
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button type="button" class="btn btn-outline-secondary">Comment</button>
+                            <!-- Add comment functionality -->
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div>
+                    <p>No posts available.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (you might need to include it if not already included) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

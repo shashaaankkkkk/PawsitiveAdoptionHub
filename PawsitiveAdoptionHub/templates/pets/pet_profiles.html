@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Pet Profiles</title>
+    {% load static %} 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Styles -->
@@ -11,15 +12,11 @@
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
             padding-top: 20px;
-            position: relative;
-            overflow-x: hidden;
         }
-        .illustration {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: -1;
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
         }
         .card {
             border-radius: 20px;
@@ -67,20 +64,14 @@
     </style>
 </head>
 <body>
-
-    <!-- SVG Illustrations -->
-    <svg class="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#f8f9fa" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,90.7C672,96,768,160,864,176C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1048,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-    </svg>
-    
-    <!-- Pet Profiles Content -->
     <div class="container">
-        <h1 class="text-center mb-4">Pet Profiles</h1>
+        <h1>Pet Profiles</h1>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for pet in pets %}
             <div class="col">
                 <div class="card shadow-sm">
                     <img src="{{ pet.photo.url }}" class="card-img-top" alt="{{ pet.name }} Photo">
+                    
                     <div class="card-body">
                         <h5 class="card-title">{{ pet.name }}</h5>
                         <p class="card-text"><strong>Age:</strong> {{ pet.age }}</p>
@@ -96,7 +87,7 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
+              
     </div>
 
     <!-- Bootstrap JavaScript (if needed) -->

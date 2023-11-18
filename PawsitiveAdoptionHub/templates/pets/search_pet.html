@@ -14,6 +14,25 @@
             height: 200px;
             object-fit: cover;
         }
+         .adopt-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .adopt-btn:hover {
+            background-color: #009999;
+        }
+        /* Optional CSS for button style */
+.adoptMeButton {
+  margin: 20px;
+}
+
     </style>
 </head>
 <body>
@@ -37,6 +56,10 @@
                     <option value="">Any</option>
                     <option value="1">1 year</option>
                     <option value="2">2 years</option>
+                    <option value="3">3 years</option>
+                    <option value="4">4 years</option>
+                    <option value="5">5 years</option>
+                    <option value="6">6 years</option>
                     <!-- Add more age choices as needed -->
                 </select>
             </div>
@@ -74,12 +97,16 @@
                         <p class="card-text">Species: {{ pet.species }}</p>
                         <p class="card-text">Age: {{ pet.age }}</p>
                         <p class="card-text"> {{ pet.description}}</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginCardModal">
+  Adopt me
+</button>
                         
                         <!-- Add more pet details as needed -->
                     </div>
                 </div>
             </div>
         {% endfor %}
+
     </div>
 
     {% if pets %}
@@ -88,8 +115,66 @@
     {% else %}
         <p class="mt-4">No pets found matching the criteria.</p>
     {% endif %}
+
+
+
+
+
+<!-- Button to trigger the modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginCardModal" tabindex="-1" role="dialog" aria-labelledby="loginCardModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginCardModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Login form inside the card -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Login</h5>
+            
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      // Process login logic here
+      // For demonstration, prevent form submission
+      event.preventDefault();
+      // Close modal after login logic
+      $('#loginCardModal').modal('hide');
+    });
+  </script>
+
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
