@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Profiles</title>
+    <!-- Add necessary CSS or stylesheet links -->
+    <!-- For example, you might link to a CSS file -->
+  
+</head>
+<body>
+    <h1>Pet Profiles</h1>
+    
+    {% if pets %}
+        <div class="pet-profiles">
+            {% for pet in pets %}
+                <div class="pet-profile">
+                    <h2>{{ pet.name }}</h2>
+                    <p><strong>Age:</strong> {{ pet.age }}</p>
+                    <p><strong>Breed:</strong> {{ pet.breed }}</p>
+                    <p><strong>Description:</strong> {{ pet.description }}</p>
+                    <img src="{{ pet.photo.url }}" alt="{{ pet.name }} Photo" width="200">
+                    <!-- Add other pet details here -->
+                    {% if pet.adoption_status %}
+                        <p>This pet is available for adoption!</p>
+                        <!-- Add adoption application form or link here -->
+                    {% else %}
+                        <p>This pet is already adopted.</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No pets available.</p>
+    {% endif %}
+    
+    <!-- Add other content or functionalities as needed -->
+</body>
+</html>
