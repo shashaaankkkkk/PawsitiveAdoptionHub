@@ -82,9 +82,20 @@ This project is licensed under the [MIT License](LICENSE).
 
 # Screenshots
 ## Home Screen
-![alt text](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/5790b3c60fc7f7430f740b0e9a52eee611b77a16/static/Screenshot%202023-11-19%20at%206.22.42%E2%80%AFAM.png)
+![homescreen](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/5790b3c60fc7f7430f740b0e9a52eee611b77a16/static/Screenshot%202023-11-19%20at%206.22.42%E2%80%AFAM.png)
 
-## Pet
-![alt_text](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/6693a6523d0c47c1f391f8127d48f549b2073a4c/static/Screenshot%202023-11-19%20at%206.22.46%E2%80%AFAM.png)
+## Pet Search
+![Pet_search](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/6693a6523d0c47c1f391f8127d48f549b2073a4c/static/Screenshot%202023-11-19%20at%206.22.46%E2%80%AFAM.png)
 ## Pet Profile
-![Pet_profile](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/6693a6523d0c47c1f391f8127d48f549b2073a4c/static/Screenshot%202023-11-19%20at%206.22.52%E2%80%AFA.png)
+![Pet_profile](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/6693a6523d0c47c1f391f8127d48f549b2073a4c/static/Screenshot%202023-11-19%20at%206.22.52%E2%80%AFAM.png)
+
+## Adoption appointment
+![Appointment_pet](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/2855fccc5ce9be06fdc0e1d8dc3f2c784aaeddba/static/Screenshot%202023-11-19%20at%206.22.56%E2%80%AFAM.png)
+## Community Forum 
+![Forum](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/2855fccc5ce9be06fdc0e1d8dc3f2c784aaeddba/static/Screenshot%202023-11-19%20at%206.32.18%E2%80%AFAM.png)
+## Vet Listing
+![Vet_listing](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/2855fccc5ce9be06fdc0e1d8dc3f2c784aaeddba/static/Screenshot%202023-11-19%20at%206.33.42%E2%80%AFAM.png)
+## Vet Profile
+![Vet_profile](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/2855fccc5ce9be06fdc0e1d8dc3f2c784aaeddba/static/Screenshot%202023-11-19%20at%206.33.50%E2%80%AFAM.png)
+## Vet Appointment 
+![Appointment_vet](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/2855fccc5ce9be06fdc0e1d8dc3f2c784aaeddba/static/Screenshot%202023-11-19%20at%206.33.59%E2%80%AFAM.png)
