@@ -78,3 +78,8 @@ Contributions are welcome! If you want to contribute to this project, please fol
 
 This project is licensed under the [MIT License](LICENSE).
 
+
+
+# Screenshots
+![alt text](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/5790b3c60fc7f7430f740b0e9a52eee611b77a16/static/Screenshot%202023-11-19%20at%206.22.42%E2%80%AFAM.png)
+
