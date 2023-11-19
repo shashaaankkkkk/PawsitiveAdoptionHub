@@ -77,13 +77,13 @@
                     <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pet-profiles/">Adopt</a>
+                    <a class="nav-link" href="/search/">Adopt</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pet-profiles/">Profiles</a>
+                    <a class="nav-link" href="/vet-profiles/">Profiles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="/forum/">Forum</a>
                 </li>
             </ul>
         </div>
@@ -97,10 +97,10 @@
                 <div class="sidebar">
                     <h5 class="sidebar-heading">Recent Posts</h5>
                     <ul class="list-group">
+                        {% for post in posts %}
                         <!-- Example sidebar content (replace with actual posts) -->
-                        <li class="list-group-item">Post 1</li>
-                        <li class="list-group-item">Post 2</li>
-                        <li class="list-group-item">Post 3</li>
+                        <li class="list-group-item">{{post.title}}</li>
+                        {% endfor %}
                         <!-- Add dynamic sidebar content if needed -->
                     </ul>
                 </div>

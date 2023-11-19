@@ -8,11 +8,11 @@
                 <div class="card-body">
                     <!-- Pet Details Card -->
                     <div class="card pet-card">
-                        <img src="{{ pets.photo.url }}" class="card-img-top" alt="{{ pets.name }}">
+                        <img src="{{ vets.profile_photo.url }}" class="card-img-top" alt="{{ vets.name }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ pets.name }}</h5>
-                            <p class="card-text">Species: {{ pets.species }}</p>
-                            <p class="card-text">Age: {{ pets.age }}</p>
+                            <h5 class="card-title">{{ vets.name }}</h5>
+                            <p class="card-text">Specialization: {{ vets.specialization }}</p>
+                            <p class="card-text">Education: {{ vets.education_history }}</p>
                             <!-- Buttons for follow and message -->
                             <button class="btn btn-primary">Follow</button>
                             <button class="btn btn-outline-primary">Message</button>
@@ -56,7 +56,7 @@
 									<h6 class="mb-0">Full Name</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value={{pets.name}}>
+									<input type="text" class="form-control" value={{vets.name}}>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -64,7 +64,7 @@
 									<h6 class="mb-0">Email</h6>
 								</div>
 								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value={{pets.name}}@pawsitive.com>
+									<input type="text" class="form-control" value={{vets.name}}@pawsitive.com>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -136,7 +136,7 @@
                 </table>
             </div>
             <div class="container mt-4">
-                <h1 class="text-center">Choose a Day for Adoption!</h1>
+                <h1 class="text-center">Choose a Day for Appointment!</h1>
                 <div class="row justify-content-center">
                     <!-- Embed appointment scheduler -->
                     <script async defer src="https://js.appointlet.com/"></script>
