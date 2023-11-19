@@ -87,4 +87,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## Pet
 ![alt_text](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/6693a6523d0c47c1f391f8127d48f549b2073a4c/static/Screenshot%202023-11-19%20at%206.22.46%E2%80%AFAM.png)
 ## Pet Profile
-![Pet_profile](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/6693a6523d0c47c1f391f8127d48f549b2073a4c/static/Screenshot%202023-11-19%20at%206.22.52%E2%80%AFAM.png)
+![Pet_profile](https://github.com/shashaaankkkkk/PawsitiveAdoptionHub/blob/6693a6523d0c47c1f391f8127d48f549b2073a4c/static/Screenshot%202023-11-19%20at%206.22.52%E2%80%AFA.png)
