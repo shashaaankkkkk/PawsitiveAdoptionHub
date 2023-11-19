@@ -16,13 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from pets.views import pet_profiles,search_pets ,home
+from pets.views import pet_profiles,pet_profile,search_pets ,home ,vet_profile,vet_profiles
+import pets
 from forum.views import post_list 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('pet-profiles/', pet_profiles, name='pet_profiles'),
-    path('search/', search_pets, name='search_pets'),
-    path("",home),
+    path('pet-profile/<int:name>/', pet_profile, name='pet_profile'),
+    path('vet-profiles/', vet_profiles, name='vet_profiles'),
+    path('vet-profile/<int:name>/', vet_profile, name='vet_profile'),
+    path('search/', search_pets,),
     path('forum/', include('forum.urls')),
+    path("",home),
+    path('auth', include('authentication.urls')),
 ]

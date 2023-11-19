@@ -8,6 +8,6 @@ from .models import Post, Comment
 
 def post_list(request):
     posts = Post.objects.all()
-    return render(request, 'PawsitiveAdoptionHub/templates/forum/post_list.html', {'posts': posts})
+    return render(request, 'forum/post_list.html', {'posts': posts})
 
 # Add views for creating posts, adding comments, etc.

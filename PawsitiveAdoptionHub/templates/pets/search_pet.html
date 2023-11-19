@@ -32,6 +32,22 @@
 .adoptMeButton {
   margin: 20px;
 }
+ .adopt-button {
+            display: block;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .adopt-button:hover {
+            background-color: #0056b3;
+        }
+
 
     </style>
 </head>
@@ -97,9 +113,7 @@
                         <p class="card-text">Species: {{ pet.species }}</p>
                         <p class="card-text">Age: {{ pet.age }}</p>
                         <p class="card-text"> {{ pet.description}}</p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginCardModal">
-  Adopt me
-</button>
+                         <a href="/pet-profile/{{pet.id}}" class="adopt-button">Let's Adopt</a>
                         
                         <!-- Add more pet details as needed -->
                     </div>
@@ -128,7 +142,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="loginCardModalLabel">Login</h5>
+        <h5 class="modal-title" id="loginCardModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -137,19 +151,15 @@
         <!-- Login form inside the card -->
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Login</h5>
+            <h5 class="card-title">Yeaahhh</h5>
+
+<span style='font-size:100px;'>&#127881;</span>
             
-            <form id="loginForm">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter username">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
-              </div>
-              <button type="submit" class="btn btn-primary">Login</button>
-            </form>
+             <form method="post" action="/pet-profile/{{pet.id}}" class="mb-2">
+          {% csrf_token %}
+    
+        <button type="submit" class="btn btn-primary">lets Adopt it </button>
+    </form>
           </div>
         </div>
       </div>
@@ -157,23 +167,17 @@
   </div>
 </div>
 
+
+
+
+
+
+
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function (event) {
-      // Process login logic here
-      // For demonstration, prevent form submission
-      event.preventDefault();
-      // Close modal after login logic
-      $('#loginCardModal').modal('hide');
-    });
-  </script>
-
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 </body>

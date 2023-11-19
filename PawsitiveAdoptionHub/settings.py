@@ -15,7 +15,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "shashankkshekharrr@gmail.com"
+EMAIL_HOST_PASSWORD = ""
+EMAIL_PORT = 587
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -25,7 +29,7 @@ SECRET_KEY = "django-insecure-gb031wf0(^%5j_fii$e80lc(%5vqwtku&&d*gfe#105t=i(pwg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shashaankk.pythonanywhere.com','127.0.0.1:8000']
+ALLOWED_HOSTS = ['shashaankk.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
     "services",
     "users",
     "utilities",
+    "authentication",
 ]
 
 MIDDLEWARE = [
@@ -61,7 +66,7 @@ ROOT_URLCONF = "PawsitiveAdoptionHub.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR,"templates"],
+        "DIRS": ["PawsitiveAdoptionHub/templates/"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -133,3 +138,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATICFILES_DIRS = [
        BASE_DIR, 'static'
 ]
+
+LOGIN_REDIRECT_URL = "/"

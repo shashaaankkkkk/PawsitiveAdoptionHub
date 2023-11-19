@@ -33,3 +33,20 @@ class Pet(models.Model):
     # Add other fields as needed
     def __str__(self):
         return self.name
+    
+
+
+
+
+class Vet(models.Model):
+    name = models.CharField(max_length=100)
+    specialization = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=15)
+    profile_photo = models.ImageField(upload_to='static/vet_photos/', blank=True, null=True)
+    education_history = models.TextField(blank=True)
+    review = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name
+
