@@ -14,7 +14,7 @@ PawsitiveAdoptionHub is a comprehensive pet adoption platform designed to simpli
 - **Pet Care Resources:** Access articles, guides, and FAQs on pet care.
 - **Vet Directory and Services Locator:** Find vet services and pet-friendly locations.
 - **Vibrant Pet Community Forum:** Engage with a community of pet enthusiasts for advice and experiences.
-
+- 
 ## Technologies Used
 
 - **Frontend:** HTML, CSS, JavaScript, Bootstrap
